@@ -1,43 +1,54 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import Layout from '../../components/Layout';
+import { colors } from '../../theme/colors';
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
-
-export default function TabTwoScreen() {
+export default function ExploreScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
+    <Layout>
+      <Text style={styles.title}>Explore Features</Text>
+      <Text style={styles.subtitle}>What ChefGrocer can do for you:</Text>
+
+      <View style={styles.feature}>
+        <Text style={styles.featureText}>🗣 Voice-powered grocery planning</Text>
+        <Text style={styles.featureText}>📊 Budget tracking with smart alerts</Text>
+        <Text style={styles.featureText}>📅 Calendar-based meal planning</Text>
+        <Text style={styles.featureText}>🔒 Pro access for premium tools</Text>
+      </View>
+
+      <View style={styles.cta}>
+        <Button
+          title="Upgrade to Pro"
+          color={colors.accentPurple}
+          onPress={() => console.log('Navigate to Paywall')}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
+      </View>
+    </Layout>
+  );
+}
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: colors.primary
+  },
+  subtitle: {
+    fontSize: 18,
+    marginTop: 10,
+    color: colors.textDark
+  },
+  feature: {
+    marginTop: 20
+  },
+  featureText: {
+    fontSize: 16,
+    marginBottom: 8,
+    color: colors.textDark
+  },
+  cta: {
+    marginTop: 30
+  }
+});
           The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
           sets up the tab navigator.
         </ThemedText>
