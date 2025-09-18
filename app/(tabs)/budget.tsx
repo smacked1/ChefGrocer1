@@ -11,28 +11,28 @@ export default function BudgetScreen() {
 
   return (
     <Layout>
-      <Text style={styles.title}>Budget Tracker</Text>
-      <Text style={styles.subtitle}>Monitor your grocery spending</Text>
+  <Text style={stylesBudget.title}>Budget Tracker</Text>
+  <Text style={stylesBudget.subtitle}>Monitor your grocery spending</Text>
 
-      <View style={styles.barContainer}>
+  <View style={stylesBudget.barContainer}>
         <ProgressBarAndroid
           styleAttr="Horizontal"
           indeterminate={false}
           progress={percent}
           color={alert ? colors.alertRed : colors.accentGreen}
         />
-        <Text style={styles.amount}>
+  <Text style={stylesBudget.amount}>
           ${spent} spent of ${budget}
         </Text>
       </View>
 
       {alert && (
-        <Text style={styles.alert}>
+  <Text style={stylesBudget.alert}>
           ⚠️ You're close to your budget limit!
         </Text>
       )}
 
-      <View style={styles.cta}>
+  <View style={stylesBudget.cta}>
         <Button
           title="View Spending Breakdown"
           color={colors.primary}
@@ -43,7 +43,7 @@ export default function BudgetScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesBudget = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',

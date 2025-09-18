@@ -5,17 +5,17 @@ import { colors } from '../../theme/colors';
 export default function PaywallScreen() {
   return (
     <Layout>
-      <Text style={styles.title}>ChefGrocer Pro</Text>
-      <Text style={styles.subtitle}>Unlock premium features:</Text>
+  <Text style={stylesPaywall.title}>ChefGrocer Pro</Text>
+  <Text style={stylesPaywall.subtitle}>Unlock premium features:</Text>
 
-      <View style={styles.features}>
-        <Text style={styles.feature}>✅ Voice-powered grocery planning</Text>
-        <Text style={styles.feature}>✅ Budget alerts + breakdowns</Text>
-        <Text style={styles.feature}>✅ Calendar-based meal planning</Text>
-        <Text style={styles.feature}>✅ Pro-only recipes and tips</Text>
+  <View style={stylesPaywall.features}>
+  <Text style={stylesPaywall.feature}>✅ Voice-powered grocery planning</Text>
+  <Text style={stylesPaywall.feature}>✅ Budget alerts + breakdowns</Text>
+  <Text style={stylesPaywall.feature}>✅ Calendar-based meal planning</Text>
+  <Text style={stylesPaywall.feature}>✅ Pro-only recipes and tips</Text>
       </View>
 
-      <View style={styles.cta}>
+  <View style={stylesPaywall.cta}>
         <Button
           title="Subscribe for $4.99/month"
           color={colors.accentPurple}
@@ -26,7 +26,7 @@ export default function PaywallScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesPaywall = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',

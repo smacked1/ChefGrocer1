@@ -9,10 +9,10 @@ export default function SettingsScreen() {
 
   return (
     <Layout>
-      <Text style={styles.title}>Settings</Text>
+        <Text style={stylesSettings.title}>Settings</Text>
 
-      <View style={styles.row}>
-        <Text style={styles.label}>Voice Commands</Text>
+  <View style={stylesSettings.row}>
+          <Text style={stylesSettings.label}>Voice Commands</Text>
         <Switch
           value={voiceEnabled}
           onValueChange={toggleVoice}
@@ -21,15 +21,15 @@ export default function SettingsScreen() {
         />
       </View>
 
-      <View style={styles.row}>
-        <Text style={styles.label}>Dark Mode (coming soon)</Text>
+  <View style={stylesSettings.row}>
+          <Text style={stylesSettings.label}>Dark Mode (coming soon)</Text>
         <Switch disabled />
       </View>
     </Layout>
   );
 }
 
-const styles = StyleSheet.create({
+const stylesSettings = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',

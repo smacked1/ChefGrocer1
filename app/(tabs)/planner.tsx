@@ -16,12 +16,12 @@ export default function PlannerScreen() {
 
   return (
     <Layout>
-      <Text style={styles.title}>Weekly Planner</Text>
-      <Text style={styles.subtitle}>Plan meals and build your grocery list</Text>
+  <Text style={stylesPlanner.title}>Weekly Planner</Text>
+  <Text style={stylesPlanner.subtitle}>Plan meals and build your grocery list</Text>
 
-      <View style={styles.inputRow}>
+  <View style={stylesPlanner.inputRow}>
         <TextInput
-          style={styles.input}
+          style={stylesPlanner.input}
           placeholder="Add item..."
           value={input}
           onChangeText={setInput}
@@ -33,15 +33,15 @@ export default function PlannerScreen() {
         data={items}
         keyExtractor={(item, index) => `${item}-${index}`}
         renderItem={({ item }) => (
-          <Text style={styles.item}>• {item}</Text>
+          <Text style={stylesPlanner.item}>• {item}</Text>
         )}
-        style={styles.list}
+  style={stylesPlanner.list}
       />
     </Layout>
   );
 }
 
-const styles = StyleSheet.create({
+const stylesPlanner = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: 'bold',
